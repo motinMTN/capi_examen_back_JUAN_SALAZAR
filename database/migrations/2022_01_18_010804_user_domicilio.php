@@ -19,7 +19,7 @@ class UserDomicilio extends Migration
             $table->string('domicilio');
             $table->integer('numero_exterior');
             $table->string('colonia');
-            $table->integer('cp');
+            $table->string('cp');
             $table->string('ciudad');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

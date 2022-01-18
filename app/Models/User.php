@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'fecha_nacimiento',
         'email',
         'password',
     ];
@@ -41,4 +42,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function domicilios()
+    {
+        return $this->hasMany(UserDomicilio::class, 'user_id');
+    }
+
 }
